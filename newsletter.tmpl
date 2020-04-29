@@ -1,0 +1,47 @@
+<mjml>
+  <mj-head>
+    <mj-title>{{ page_title }}</mj-title>
+    <mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:300,500"></mj-font>
+    <mj-attributes>
+      <mj-all font-family="sans-serif"></mj-all>
+      <mj-text font-weight="300" font-size="14px" color="#616161" line-height="24px"></mj-text>
+      <mj-section padding="0px"></mj-section>
+    </mj-attributes>
+  </mj-head>
+  <mj-body width="600px">
+    <mj-wrapper border="1px solid #48ae64"  background-color="#fff">
+    <mj-section>
+      <mj-column width="100%">
+        <mj-text font-size="18px" color="#004481" font-weight="bold" align="left" >
+          <h2>{{ newsletter_title }}</h2>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+    <mj-column width="100%">
+        <mj-text font-size="14px" color="#004481" font-weight="bold" align="left" padding-bottom="2px">
+          {{ period_text }}
+        </mj-text>
+        <mj-divider border-width="5px" padding-top="0px" border-color="#004481"></mj-divider>
+      </mj-column>
+    </mj-section>
+
+  {% for key, section in sections.items() %}
+     <mj-section>
+        <mj-column width="100%">
+          <mj-text>
+            <h2 style="float:left; font-weight: bold; margin-top: 0; margin-bottom: 0; color: #48ae64;">
+                {{ section }}
+            </h2>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+    {% for newsletter_item in newsletter_items %}
+      {% if newsletter_item.section == key %}
+        {{ newsletter_item.render_object() }}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  </mj-body>
+</mjml>

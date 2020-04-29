@@ -1,0 +1,19 @@
+<mj-section>
+      <mj-column width="75%">
+        <mj-text>
+          <h3 style="font-weight: bold; margin-top: 0; margin-bottom: 0">
+            <a href="{{ header_link }}" style="color: #1973b8; text-decoration: none">
+            {{ header }}
+            </a> </h3>
+          <p style="font-size: 14px;">
+            {{ content }}
+          </p>
+        </mj-text>
+        {% for link in links %}
+              {{ link.render_object() }}
+            {% endfor %}
+      </mj-column>
+      <mj-column width="25%">
+        <mj-image width="100px" href="{{ image_link }}" src="{{ image }}"></mj-image>
+      </mj-column>
+    </mj-section>
