@@ -3,11 +3,11 @@ from template_mixin import TemplateMixin
 
 class NewsletterItem(TemplateMixin):
 
-    def __init__(self, header, header_link, content, links, image, image_link, section):
+    def __init__(self, header, header_link, content, section, links=[], image=[], image_link=[]):
         super().__init__("newsletter_item.tmpl")
         self.header = header
         self.header_link = header_link
-        self.content = content
+        self.content = content.strip()
         self.links = links
         self.image = image
         self.image_link = image_link
