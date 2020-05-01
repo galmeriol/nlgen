@@ -39,7 +39,7 @@
 
     {% for newsletter_item in newsletter_items %}
       {% if newsletter_item.section == key %}
-        {{ newsletter_item.render_object() }}
+        {{ newsletter_item.render() }}
       {% endif %}
     {% endfor %}
   {% endfor %}

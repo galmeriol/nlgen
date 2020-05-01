@@ -9,9 +9,9 @@ class NewsletterItemLink(TemplateMixin):
         self.text = text
         self.link = link
     
-    def render_object(self):
+    def render(self):
         
-        return super().render_object(
+        return self.render_object(
             template=self.template, 
             text=self.text,
             link=self.link)

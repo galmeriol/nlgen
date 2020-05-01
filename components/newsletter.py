@@ -13,12 +13,19 @@ class Newsletter(TemplateMixin):
         self.sections = sections
         self.newsletter_items = newsletter_items
     
-    def render_object(self):
+    def render(self):
         
-        return super().render_object(
+        self.newsletter_str = self.render_object(
             template=self.template,
             page_title=self.page_title,
             newsletter_title=self.newsletter_title,
             period_text=self.period_text,
             sections=self.sections,
             newsletter_items=self.newsletter_items)
+
+        return self
+
+    def export(self, file_name="newsletter.mjml"):
+
+        with open(file_name, "w") as nl:
+            nl.write(self.newsletter_str)

@@ -15,9 +15,9 @@ class NewsletterItem(TemplateMixin):
         self.image_link = image_link
         self.section = section
     
-    def render_object(self):
+    def render(self):
         
-        return super().render_object(
+        return self.render_object(
             template=self.template,
             header=self.header, 
             header_link=self.header_link,

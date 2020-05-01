@@ -26,11 +26,10 @@ nlitem = NewsletterItem(
     section="1")
 
 newsletter = Newsletter(
-    page_title="Big Data ve Data Science Teknolojik Gelişmeler",
-    newsletter_title="Büyük Veri ve İleri Analitik Bülten",
+    page_title="Teknolojik Gelişmeler",
+    newsletter_title="Bülten",
     period_text="Şubat / Mart ",
     sections=sections,
-    newsletter_items=[nlitem]).render_object()
-
-with open("newsletter.mjml", "w") as nl:
-    nl.write(newsletter)
+    newsletter_items=[nlitem])\
+        .render()\
+        .export()
