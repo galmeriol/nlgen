@@ -1,7 +1,7 @@
 import jinja2
-from newsletter_item import NewsletterItem
-from newsletter_item_link import NewsletterItemLink
-from newsletter import Newsletter
+from components.newsletter_item import NewsletterItem
+from components.newsletter_item_link import NewsletterItemLink
+from components.newsletter import Newsletter
 
 sections = {"1": "Etkinlikler ve önemli duyurular"}
 
