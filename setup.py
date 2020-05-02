@@ -1,9 +1,12 @@
-import setuptools
+from setuptools import setup
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+	
+with open('requirements.txt') as fr:
+    required = fr.read().splitlines()	
 
-setuptools.setup(
+setup(
     name="nlgen",
     version="0.0.1",
     author="galmeriol",
@@ -12,7 +15,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/galmeriol/nlgen",
-    packages=setuptools.find_packages(),
+    install_requires=required,
     classifiers=[
         "Programming Language :: Python :: 3",
     ],
