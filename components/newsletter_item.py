@@ -1,4 +1,5 @@
 import jinja2
+
 from mixin.template_mixin import TemplateMixin
 
 class NewsletterItem(TemplateMixin):
@@ -9,7 +10,7 @@ class NewsletterItem(TemplateMixin):
 
         self.header = header
         self.header_link = header_link
-        self.content = content.strip()
+        self.content = ''.join(line.strip() for line in content.splitlines(True))
         self.links = links
         self.image = image
         self.image_link = image_link

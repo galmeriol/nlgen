@@ -13,14 +13,14 @@
     <mj-section>
       <mj-column width="100%">
         <mj-text font-size="18px" color="#004481" font-weight="bold" align="left" >
-          <h2>{{- newsletter_title }}</h2>
+          <h2>{{- newsletter_title -}}</h2>
         </mj-text>
       </mj-column>
     </mj-section>
     <mj-section>
     <mj-column width="100%">
         <mj-text font-size="14px" color="#004481" font-weight="bold" align="left" padding-bottom="2px">
-          {{- period_text }}
+          {{- period_text -}}
         </mj-text>
         <mj-divider border-width="5px" padding-top="0px" border-color="#004481"></mj-divider>
       </mj-column>
@@ -31,7 +31,7 @@
         <mj-column width="100%">
           <mj-text>
             <h2 style="font-weight: bold; margin-top: 0; margin-bottom: 0; color: #48ae64;">
-                {{- section }}
+                {{- section -}}
             </h2>
           </mj-text>
         </mj-column>
@@ -39,7 +39,7 @@
 
     {%- for newsletter_item in newsletter_items %}
       {%- if newsletter_item.section == key %}
-        {{- newsletter_item.render() }}
+        {{- newsletter_item.render() -}}
       {%- endif %}
     {%- endfor %}
   {%- endfor %}

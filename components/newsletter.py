@@ -1,6 +1,8 @@
 import jinja2
 import re
 import os
+import inspect
+
 from mixin.template_mixin import TemplateMixin
 
 class Newsletter(TemplateMixin):
@@ -26,11 +28,7 @@ class Newsletter(TemplateMixin):
             newsletter_items=self.newsletter_items)
 
         return self
-
-    def __remove_non_ascii(self, text):
-        print("call for " + text)
-        return re.sub(u'\uFFFD', ';', text)
-
+        
     def export(self, file_name="newsletter.mjml"):
 
         with open(file_name, "w", encoding="utf-8") as nl:
