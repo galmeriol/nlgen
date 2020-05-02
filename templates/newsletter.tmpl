@@ -1,7 +1,7 @@
 <mjml>
-  <mj-head>
-    <mj-title>{{ page_title }}</mj-title>
-    <mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:300,500"></mj-font>
+<mj-head>
+<mj-title>{{- page_title }}</mj-title>
+<mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:300,500"></mj-font>
     <mj-attributes>
       <mj-all font-family="sans-serif"></mj-all>
       <mj-text font-weight="300" font-size="14px" color="#616161" line-height="24px"></mj-text>
@@ -20,7 +20,7 @@
     <mj-section>
     <mj-column width="100%">
         <mj-text font-size="14px" color="#004481" font-weight="bold" align="left" padding-bottom="2px">
-          {{ period_text }}
+          {{- period_text }}
         </mj-text>
         <mj-divider border-width="5px" padding-top="0px" border-color="#004481"></mj-divider>
       </mj-column>
@@ -37,11 +37,11 @@
         </mj-column>
       </mj-section>
 
-    {% for newsletter_item in newsletter_items %}
-      {% if newsletter_item.section == key %}
-        {{ newsletter_item.render() }}
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
+    {%- for newsletter_item in newsletter_items %}
+      {%- if newsletter_item.section == key %}
+        {{- newsletter_item.render() }}
+      {%- endif %}
+    {%- endfor %}
+  {%- endfor %}
   </mj-body>
 </mjml>

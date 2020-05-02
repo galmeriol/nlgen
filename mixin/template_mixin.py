@@ -1,4 +1,6 @@
 import jinja2
+import re
+import os
 
 class TemplateMixin():
 
@@ -11,4 +13,6 @@ class TemplateMixin():
         return templateEnv.get_template(TEMPLATE_FILE)
 
     def render_object(self, template, **kwargs):
-        return template.render(**kwargs)
+        template_str = template.render(**kwargs)
+
+        return template_str

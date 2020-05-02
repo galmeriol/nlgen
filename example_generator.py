@@ -25,10 +25,10 @@ nlitem = NewsletterItem(
     image_link="https://spark.apache.org/news/spark-3.0.0-preview.html",
     section="1")
 
-newsletter = Newsletter(
+Newsletter(
     page_title="Teknolojik Gelişmeler",
     newsletter_title="Bülten",
-    period_text="Şubat / Mart ",
+    period_text="Şubat / Mart",
     sections=sections,
     newsletter_items=[nlitem])\
         .render()\

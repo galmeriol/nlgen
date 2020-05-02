@@ -15,3 +15,4 @@ class NewsletterItemLink(TemplateMixin):
             template=self.template, 
             text=self.text,
             link=self.link)
+        
