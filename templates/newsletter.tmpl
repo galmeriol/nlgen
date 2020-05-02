@@ -13,7 +13,7 @@
     <mj-section>
       <mj-column width="100%">
         <mj-text font-size="18px" color="#004481" font-weight="bold" align="left" >
-          <h2>{{ newsletter_title }}</h2>
+          <h2>{{- newsletter_title }}</h2>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -30,8 +30,8 @@
      <mj-section>
         <mj-column width="100%">
           <mj-text>
-            <h2 style="float:left; font-weight: bold; margin-top: 0; margin-bottom: 0; color: #48ae64;">
-                {{ section }}
+            <h2 style="font-weight: bold; margin-top: 0; margin-bottom: 0; color: #48ae64;">
+                {{- section }}
             </h2>
           </mj-text>
         </mj-column>
@@ -43,5 +43,11 @@
       {%- endif %}
     {%- endfor %}
   {%- endfor %}
+  </mj-wrapper>
+  <mj-section padding="0px">
+      <mj-column width="100%">
+        <mj-image align="left" height="150px" width="150px" href="https://www.linkedin.com/company/garanti-teknoloji/" src="https://anlatsin.com/media/topic/logo/garantiteknoloji_1560349966.jpg"></mj-image>
+      </mj-column>
+    </mj-section>
   </mj-body>
 </mjml>
