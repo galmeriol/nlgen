@@ -1,2 +1,2 @@
 # nlgen
-mjml newsletter generator in Python
+MJML newsletter generator in Python
