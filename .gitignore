@@ -2,6 +2,6 @@ __pycache__/
 *.html
 *.mjml
 .DS_Store
-dist/
+dist/*.tar.gz
 build/
 nlgen.egg-info/
