@@ -1,5 +1,5 @@
 import jinja2
-from mixin.template_mixin import TemplateMixin
+from nlgen.mixin.template_mixin import TemplateMixin
 
 class NewsletterItemLink(TemplateMixin):
 

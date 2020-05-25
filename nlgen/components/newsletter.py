@@ -3,7 +3,7 @@ import re
 import os
 import inspect
 
-from mixin.template_mixin import TemplateMixin
+from nlgen.mixin.template_mixin import TemplateMixin
 
 class Newsletter(TemplateMixin):
 
@@ -18,7 +18,7 @@ class Newsletter(TemplateMixin):
         self.newsletter_items = newsletter_items
     
     def render(self):
-        
+        print('rendering newsletter...')
         self.newsletter_str = self.render_object(
             template=self.template,
             page_title=self.page_title,
@@ -30,6 +30,7 @@ class Newsletter(TemplateMixin):
         return self
         
     def export(self, file_name="newsletter.mjml"):
-
+        print('exporting newsletter...')
         with open(file_name, "w", encoding="utf-8") as nl:
             nl.write(self.newsletter_str)
+            print('export done!')
