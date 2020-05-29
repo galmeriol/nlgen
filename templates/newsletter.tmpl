@@ -40,8 +40,14 @@
     {%- for newsletter_item in newsletter_items %}
       {%- if newsletter_item.section == key %}
         {{- newsletter_item.render() -}}
+        <mj-column width="100%">
+        <mj-divider border-width="1px" border-color="#c0c0c0"></mj-divider>
+      </mj-column>
       {%- endif %}
     {%- endfor %}
+    <mj-column width="100%">
+        <mj-divider border-width="1px" border-color="#004481"></mj-divider>
+      </mj-column>
   {%- endfor %}
   </mj-wrapper>
   <mj-section padding="0px">
