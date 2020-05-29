@@ -15,7 +15,7 @@ class Newsletter(TemplateMixin):
         self.newsletter_title = newsletter_title
         self.period_text = period_text
         self.sections = sections
-        self.newsletter_items = newsletter_items
+        self.newsletter_items = newsletter_items.sort(key=lambda x: int(x.section))
     
     def render(self):
         print('rendering newsletter...')
