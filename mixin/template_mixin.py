@@ -8,6 +8,7 @@ class TemplateMixin():
     def load_template(self, file_name):
         
         template_dir = dirname(dirname(abspath(__file__))).rstrip('/') + '/templates'
+        print(template_dir)
         templateLoader = jinja2.FileSystemLoader(searchpath=template_dir)
         templateEnv = jinja2.Environment(loader=templateLoader)
         TEMPLATE_FILE = file_name
