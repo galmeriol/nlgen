@@ -16,6 +16,7 @@ class TemplateMixin():
         return templateEnv.get_template(TEMPLATE_FILE)
 
     def render_object(self, template, **kwargs):
+        print(template)
         template_str = template.render(**kwargs)
 
         return template_str
