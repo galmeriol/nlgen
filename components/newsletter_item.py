@@ -39,6 +39,6 @@ class NewsletterItem(TemplateMixin):
         print("Checking image size for url: " + self.image)
         image_raw = get(self.image, verify=False)
         image = Image.open(BytesIO(image_raw.content))
-        width = height = image.size
+        width, height = image.size
 
         return 100, height * (100 / width)
