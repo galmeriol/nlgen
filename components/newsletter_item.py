@@ -1,7 +1,8 @@
 import jinja2
 
 from nlgen.mixin.template_mixin import TemplateMixin
-import urllib, cStringIO
+from requests import get
+from io import BytesIO
 from PIL import Image
 
 class NewsletterItem(TemplateMixin):
@@ -35,6 +36,6 @@ class NewsletterItem(TemplateMixin):
             section=self.section)
 
     def __get_image_size(self, url):
-        file = cStringIO.StringIO(urllib.urlopen(URL).read())
-        im=Image.open(file)
-        return im.size
+        image_raw = get(url, verify=False)
+        image = Image.open(BytesIO(image_raw.content))
+        image.size
