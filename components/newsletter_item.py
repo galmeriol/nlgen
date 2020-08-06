@@ -36,8 +36,8 @@ class NewsletterItem(TemplateMixin):
             section=self.section)
 
     def __get_image_size(self):
-        print("Checking image size for url: " + self.image_link)
-        image_raw = get(self.image_link, verify=False)
+        print("Checking image size for url: " + self.image)
+        image_raw = get(self.image, verify=False)
         image = Image.open(BytesIO(image_raw.content))
         width = height = image.size
 
