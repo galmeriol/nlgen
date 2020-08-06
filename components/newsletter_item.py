@@ -19,7 +19,7 @@ class NewsletterItem(TemplateMixin):
         self.image_link = image_link
         self.section = section
 
-        self.image_width, self.image_height = __get_image_size(image_link)
+        self.image_width, self.image_height = self.__get_image_size(image_link)
     
     def render(self):
         
