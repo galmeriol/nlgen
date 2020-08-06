@@ -19,7 +19,7 @@ class NewsletterItem(TemplateMixin):
         self.image_link = image_link
         self.section = section
 
-        self.image_width, self.image_height = self.__get_image_size(image_link)
+        self.image_width, self.image_height = self.__get_image_size()
     
     def render(self):
         
@@ -30,12 +30,15 @@ class NewsletterItem(TemplateMixin):
             content=self.content, 
             links=self.links,
             image=self.image,
-            image_width=100,
-            image_height=self.image_height * (100 / self.image_width),
+            image_width=self.image_width,
+            image_height=self.image_height,
             image_link=self.image_link,
             section=self.section)
 
-    def __get_image_size(self, url):
-        image_raw = get(url, verify=False)
+    def __get_image_size(self):
+        print("Checking image size for url: " + self.image_link)
+        image_raw = get(self.image_link, verify=False)
         image = Image.open(BytesIO(image_raw.content))
-        image.size
+        width = height = image.size
+
+        return 100, height * (100 / width)
