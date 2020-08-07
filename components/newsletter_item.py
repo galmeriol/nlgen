@@ -37,8 +37,12 @@ class NewsletterItem(TemplateMixin):
 
     def __get_image_size(self):
         print("Checking image size for url: " + self.image)
-        image_raw = get(self.image, verify=False)
-        image = Image.open(BytesIO(image_raw.content))
-        width, height = image.size
+
+        try:
+            image_raw = get(self.image, verify=False)
+            image = Image.open(BytesIO(image_raw.content))
+            width, height = image.size
+        except Exception:
+            raise ValueError("Haber görseli boyutları belirlenemedi. Lütfen başka görsel belirleyiniz.")
 
         return 100, height * (100 / width)
